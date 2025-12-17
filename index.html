@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Associação Ekun Circo Social</title>
+
     <style>
-        /* ===== Reset e básico ===== */
+        /* ===== Reset ===== */
         * {
             margin: 0;
             padding: 0;
@@ -14,9 +15,13 @@
         }
 
         body {
+            background-color: #f4f4f4;
+            color: #2b2b2b;
             line-height: 1.6;
-            background-color: #fdfcfb;
-            color: #333;
+        }
+
+        h1, h2, h3 {
+            font-weight: bold;
         }
 
         a {
@@ -24,154 +29,255 @@
             color: inherit;
         }
 
+        /* ===== Cores principais ===== */
+        :root {
+            --vermelho: #c4000f;
+            --vermelho-escuro: #8b0000;
+            --preto: #000000;
+            --branco: #ffffff;
+            --cinza: #2b2b2b;
+        }
+
         /* ===== Cabeçalho ===== */
         header {
-            background-color: #991F09; /* COR ALTERADA PARA VERMELHO */
+            background-color: var(--preto);
             padding: 20px 40px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         header img {
-            height: 60px; /* altura do logo */
-            margin-right: 20px;
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-            color: #fff;
+            height: 60px;
         }
 
         nav ul {
-            display: flex;
             list-style: none;
+            display: flex;
             gap: 20px;
         }
 
-        nav ul li a {
-            color: #fff;
+        nav a {
+            color: var(--branco);
             font-weight: bold;
             transition: color 0.3s;
         }
 
-        nav ul li a:hover {
-            color: #222;
+        nav a:hover {
+            color: var(--vermelho);
         }
 
         /* ===== Seções ===== */
         section {
-            padding: 60px 40px;
-        }
-
-        section:nth-child(even) {
-            background-color: #fff5e6;
+            padding: 70px 40px;
         }
 
         section h2 {
-            font-size: 2rem;
+            color: var(--vermelho);
             margin-bottom: 20px;
-            color: #991F09;
+            font-size: 2rem;
         }
 
-        section p, section li {
-            margin-bottom: 15px;
+        /* ===== Home ===== */
+        #home {
+            background-color: var(--preto);
+            color: var(--branco);
+            text-align: center;
         }
 
-        ul.project-list {
-            list-style: disc inside;
+        #home h2 {
+            color: var(--vermelho);
+        }
+
+        #home p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 1.1rem;
+        }
+
+        /* ===== Projetos ===== */
+        .projetos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .projeto {
+            background-color: var(--branco);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .projeto img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .projeto-conteudo {
+            padding: 20px;
+        }
+
+        .projeto-conteudo h3 {
+            color: var(--vermelho-escuro);
+            margin-bottom: 10px;
         }
 
         /* ===== Footer ===== */
         footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px 40px;
+            background-color: var(--preto);
+            color: var(--branco);
             text-align: center;
+            padding: 20px;
         }
 
         /* ===== Responsivo ===== */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                align-items: flex-start;
+                gap: 15px;
             }
 
             nav ul {
                 flex-direction: column;
-                gap: 10px;
-                margin-top: 10px;
-            }
-
-            header img {
-                margin-bottom: 10px;
+                align-items: center;
             }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- ===== Cabeçalho ===== -->
-    <header>
-        <img src="imagens/logo.png" alt="Logo Ekun">
-        <h1>Associação Ekun Circo Social</h1>
-        <nav>
-            <ul>
-                <li><a href="#associacao">A Associação</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#treinos">Treinos Livres</a></li>
-                <li><a href="#contactos">Contactos</a></li>
-                <li><a href="#donativos">Donativos</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <img src="imagens/logo.png" alt="Logo Associação Ekun Circo Social">
+    <nav>
+        <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#associacao">A Associação</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contactos">Contactos</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- ===== Home / Apresentação ===== -->
-    <section id="home">
-        <h2>Bem-vindos à Ekun Circo Social</h2>
-        <p>Promovemos a arte circense e a inclusão social através do Circo Social e do Novo Circo. Descubra nossos projetos e participe desta comunidade criativa e acolhedora.</p>
-    </section>
+<section id="home">
+    <h2>Associação Ekun Circo Social</h2>
+    <p>
+        Promovemos o circo como ferramenta artística, social e comunitária,
+        criando espaços de encontro, aprendizagem e inclusão no Porto, Portugal.
+    </p>
+</section>
 
-    <!-- ===== A Associação ===== -->
-    <section id="associacao">
-        <h2>A Associação</h2>
-        <h3>Quem Somos</h3>
-        <p>A Associação Ekun Circo Social é uma associação juvenil sem fins lucrativos, criada em 2022...</p>
-        <h4>Circo Social</h4>
-        <p>O Circo Social é uma abordagem que combina artes circenses e intervenção social...</p>
-        <h4>Novo Circo</h4>
-        <p>O Novo Circo é uma forma contemporânea de expressão artística...</p>
-    </section>
+<section id="associacao">
+    <h2>A Associação</h2>
+    <p>
+        A Associação Ekun Circo Social é uma associação juvenil sem fins lucrativos,
+        fundada em 2022, dedicada à prática do circo social e do circo contemporâneo,
+        promovendo inclusão, diversidade e expressão artística.
+    </p>
+</section>
 
-    <!-- ===== Projetos ===== -->
-    <section id="projetos">
-        <h2>Projetos</h2>
-        <h3>Férias com o Circo</h3>
-        <p>Programa de aulas de circo durante as férias...</p>
-    </section>
+<section id="projetos">
+    <h2>Projetos</h2>
 
-    <!-- ===== Treinos Livres ===== -->
-    <section id="treinos">
-        <h2>Treinos Livres</h2>
-        <p>Em breve, informações sobre os treinos livres da associação...</p>
-    </section>
+    <div class="projetos-grid">
 
-    <!-- ===== Contactos ===== -->
-    <section id="contactos">
-        <h2>Contactos</h2>
-        <p>Em breve, informações de contato, endereço, e-mail, WhatsApp e redes sociais.</p>
-    </section>
+        <div class="projeto">
+            <img src="imagens/ferias-circo.jpg" alt="Férias com o Circo">
+            <div class="projeto-conteudo">
+                <h3>Férias com o Circo</h3>
+                <p>
+                    Atividades circenses durante as férias de verão para crianças
+                    e jovens dos 5 aos 15 anos, com acrobacias, técnicas aéreas,
+                    malabares e dança, promovendo desenvolvimento físico,
+                    criativo e social.
+                </p>
+            </div>
+        </div>
 
-    <!-- ===== Donativos ===== -->
-    <section id="donativos">
-        <h2>Donativos</h2>
-        <p>Em breve, informações sobre como apoiar a Associação Ekun Circo Social.</p>
-    </section>
+        <div class="projeto">
+            <div class="projeto-conteudo">
+                <h3>Kabaret</h3>
+                <p>
+                    Espetáculos de variedades em artes performativas, com abertura
+                    de palco para artistas emergentes, promovendo encontros,
+                    diversidade e acesso à cultura.
+                </p>
+            </div>
+        </div>
 
-    <!-- ===== Footer ===== -->
-    <footer>
-        <p>Associação Ekun Circo Social © 2025</p>
-    </footer>
+        <div class="projeto">
+            <div class="projeto-conteudo">
+                <h3>Workshops</h3>
+                <p>
+                    Workshops de experimentação e aprofundamento em técnicas
+                    circenses, para diferentes idades e níveis,
+                    promovendo aprendizagem e troca de saberes.
+                </p>
+            </div>
+        </div>
+
+        <div class="projeto">
+            <div class="projeto-conteudo">
+                <h3>Performances</h3>
+                <p>
+                    Criações e apresentações solo ou em grupo, integrando
+                    linguagens do circo contemporâneo e refletindo a identidade
+                    artística da associação.
+                </p>
+            </div>
+        </div>
+
+        <div class="projeto">
+            <div class="projeto-conteudo">
+                <h3>Circo para Integração</h3>
+                <p>
+                    Workshops introdutórios de circo para adultos, promovendo
+                    convivência entre pessoas de diferentes nacionalidades,
+                    com momentos de partilha e encontro.
+                </p>
+            </div>
+        </div>
+
+        <div class="projeto">
+            <div class="projeto-conteudo">
+                <h3>Treinos Livres</h3>
+                <p>
+                    Espaços abertos para treinos livres, destinados a pessoas
+                    interessadas em experimentar o circo e a artistas que
+                    necessitam de locais adequados para ensaios.
+                </p>
+            </div>
+        </div>
+
+        <div class="projeto">
+            <div class="projeto-conteudo">
+                <h3>Encontro Anual de Circo</h3>
+                <p>
+                    Evento anual no Porto que reúne workshops, treinos abertos,
+                    rodas de conversa, noite de gala e palco aberto,
+                    totalmente gratuito e aberto à comunidade.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contactos">
+    <h2>Contactos</h2>
+    <p>Porto, Portugal</p>
+    <p>Em breve: e-mail, redes sociais e formas de apoio.</p>
+</section>
+
+<footer>
+    <p>Associação Ekun Circo Social © 2025</p>
+</footer>
 
 </body>
 </html>
